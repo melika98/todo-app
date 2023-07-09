@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo app</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 </head>
 <body>
-    <h1>Todo App</h1>
-    <form action="/add", method="post">
-        <div>
+    <div style="margin-top: 50px;" class="ui container">
+
+    <h1  class="ui center aligned header">Todo App</h1>
+    <form class="ui form" action="/add", method="post">
+        <div class="field">
             <label for="title">Todo Title</label>
             <input type="text" name="title"placeholder="Enter Todo...">
             <br>
-            <button type="submit">Add</button>
+            <button class="ui black button" type="submit">Add</button>
         </div>
     </form>
     {%for todo in todo_list %}
-    <p>
+    <div class="ui segment">
+    <p class="ui big header">
         {{ todo.id}} | {{ todo.title }}
     </p>
 
     {% if todo.is_completed == false %}
-        <span>Not Completed</span>
+        <span class="ui red label">Not Completed</span>
     {% else %}
-        <span>Completed</span>
+        <span class="ui blue label">Completed</span>
     {% endif %}
    
-    <a href="/update/{{todo.id}}">update</a>
-    <a href="/delete/{{todo.id}}">delete</a>
-
+    <a class="ui green button" href="/update/{{todo.id}}">update</a>
+    <a class="ui yellow button" href="/delete/{{todo.id}}">delete</a>
+</div>
 {% endfor %}
+</div>
 </body>
 </html>
