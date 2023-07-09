@@ -13,7 +13,7 @@ Now you can see the name of your environment in the terminal<br/>
 Now you can install flask by using this command in terminal:<br/>
 -pip install flask<br/>
 You must use the following code to run it<br/>
-  python app.py<br/>
+-python app.py<br/>
 To run, we need the following modules, install them with the following commands:<br/>
 -pip install Flask-SQLAlchemy
  
