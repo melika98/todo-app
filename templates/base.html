@@ -25,9 +25,9 @@
     {% else %}
         <span>Completed</span>
     {% endif %}
-
-    <a href="/">update</a>
-    <a href="/">delete</a>
+   
+    <a href="/update/{{todo.id}}">update</a>
+    <a href="/delete/{{todo.id}}">delete</a>
 
 {% endfor %}
 </body>
